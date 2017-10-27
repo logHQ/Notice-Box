@@ -1,9 +1,8 @@
 <?php
 /*
-Plugin Name: Notice Box by LogHQ
+Plugin Name: Notice Box LogHQ
 Plugin URI: http://wp.login.plus/
-Description: Simple Light Weight Notice Box by LogHQ (less than 5 KiloBytes) to use with content. The Notice Box can be embbed within your content with easy to use shortcode. Use following shortcode:  [noticebox type="error" msg="Error not functioning"]   [noticebox type="success" txt=" Yeah hurray nice"] [noticebox type="warning" text=" Becareful !! "]  [noticebox type="notice" message=" Notice"]
-
+Description: Simple Light Weight "Notice Box by LogHQ" is less than 5 Kilo Bytes and it does not requires any configuration. It can be used to display 4 types of notice boxes: 1. Notice Box, 2. Warning Box, 3. Success Box, 4. Error Box. The Notice Box can be embbed within your content with easy to use shortcode. Use following shortcode:  [noticebox type="error" msg="Error not functioning"]   [noticebox type="success" txt=" Yeah hurray nice"] [noticebox type="warning" text=" Becareful !! "]  [noticebox type="notice" message=" Notice"]
 Author: wp.Login.plus
 Author URI: http://wp.login.plus/
 Version: 1.0.1
@@ -80,6 +79,7 @@ function create_noticebox_shortcode($atts) {
 			'text' 		=> '',
 			'message' 	=> '',
 			'type' 		=> '',
+			'class'		=> '',
 		),
 		$atts,
 		'noticebox'
@@ -92,9 +92,11 @@ function create_noticebox_shortcode($atts) {
 	
 	// type
 	$type = $atts['type'];
+	// class name
+	$class = $atts['class'];
 
 	// OUTPUT
-	$htmlbox = '<div class="noticebox '. $type .'"><span>'. $type .': </span>'. $msg . $txt . $text . $message. '</div>';
+	$htmlbox = '<div class="noticebox '. $type .' '. $class. ' "><span>'. $type .': </span>'. $msg . $txt . $text . $message. '</div>';
 	
 	return $htmlbox;
 }
