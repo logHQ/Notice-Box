@@ -57,17 +57,17 @@ Yes, use class="your_class_name" inside the shortcode like [noticebox type="succ
 
 == Screenshots ==
 
-1. Notice Box
-2. Warning Box
-3. Error Box
-4. Schortcode Usage
+1. Notice Box Shortcode usage [noticebox type="notice" text=" Community support is available via our forum. You can go to community forum via https://community.login.plus/forums/ Please be nice and happy :) "]
+2. Warning Box Shortcode usage [noticebox type="warning" text=" Hey! If you forget your LOG-in credentials for more than 3 times, you could be locked hence use 'forget password' link. "]
+3. Success Box Shortcode usage [noticebox type="success" text=" Congratulations !! Your account has been created. Also, check your e-mail for confirmation message. "]
+4. Error Box Shortcode usage [noticebox type="error" text=" You are trying to access invalid settings, please check'em once again "]
 
 == Changelog ==
 
-= 1.0 =
+= 1.0.1 =
 * Initial plugin release
 
 == Upgrade Notice ==
 
-= 1.0.0 =
+= 1.0.1 =
 Initial plugin release
