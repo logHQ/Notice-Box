@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Notice Box LogHQ
+Plugin Name: Notice Box
 Plugin URI: https://wp.login.plus/notice-box-loghq/
 Description: Simple Light Weight "Notice Box by LogHQ" does not requires any configuration. It can be used to display 4 types of notice boxes: 1. Notice Box, 2. Warning Box, 3. Success Box, 4. Error Box. Embedded  boxes within your content with shortcodes. 
 Author: wp.Login.plus
