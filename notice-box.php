@@ -30,8 +30,8 @@ function noticebox_css(){
 .noticebox {
 	color:#555;
 	border-radius:10px;
-	font-family:Tahoma,Geneva,Arial,sans-serif;font-size:11px;
-	padding:10px 36px;
+	/*font-family:Tahoma,Geneva,Arial,sans-serif;font-size:11px;
+	padding:10px 36px;*/
 	margin:10px;
 }
 .noticebox span {
