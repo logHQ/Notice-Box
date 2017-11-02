@@ -30,8 +30,10 @@ function noticebox_css(){
 .noticebox {
 	color:#555;
 	border-radius:10px;
-	/*font-family:Tahoma,Geneva,Arial,sans-serif;font-size:11px;
-	padding:10px 36px;*/
+	/*
+	font-family:Tahoma,Geneva,Arial,sans-serif;font-size:11px;
+	*/
+	padding:10px 36px;
 	margin:10px;
 }
 .noticebox span {
@@ -56,6 +58,10 @@ function noticebox_css(){
 	border:1px solid #8ed9f6;
 }
 
+.noicon,.hideicon{
+	background-image: none !important;
+}
+
 </style>
 		";
 		
@@ -72,6 +78,9 @@ function create_noticebox_shortcode($atts) {
 			'message' 	=> '',
 			'type' 		=> '',
 			'class'		=> '',
+			'noicon'		=> '',
+			'hideicon'		=> '',
+			'boxtitle'		=> '',
 		),
 		$atts,
 		'noticebox'
@@ -86,9 +95,18 @@ function create_noticebox_shortcode($atts) {
 	$type = $atts['type'];
 	// class name
 	$class = $atts['class'];
-
+	
+	// other options
+	$noicon = $atts['noicon'];
+	$hideicon = $atts['hideicon'];
+	$boxtitle = $atts['boxtitle'];
+	
+	if($noicon == "true" || $noicon == 1){$noicon = 'noicon';}else{$noicon='';}
+	if($hideicon == "true" || $hideicon == 1){$hideicon = 'hideicon';}else{$hideicon='';}
+	if($boxtitle == "false" || $boxtitle == "no" || $boxtitle == 0){$boxtitle='<span class="boxtitle">'. $type .': </span>';}else{$boxtitle = '';}
+	
 	// OUTPUT
-	$htmlbox = '<div class="noticebox '. $type .' '. $class. ' "><span>'. $type .': </span>'. $msg . $txt . $text . $message. '</div>';
+	$htmlbox = '<div class="noticebox '. $type .'  '. $hideicon .' '. $class. ' "> '. $boxtitle. $msg . $txt . $text . $message. '</div>';
 	
 	return $htmlbox;
 }
