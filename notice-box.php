@@ -8,21 +8,14 @@ Author URI: https://wp.login.plus/
 Version: 1.0.1
 Text Domain: noticebox_loghq
 */
-
 // Prevent direct access
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
-
-
-
 /* Enable shortcodes in widget area */
 add_filter('widget_text', 'do_shortcode');
-
-
 // add css in footer
 add_action( 'wp_footer','noticebox_css');
-
 function noticebox_css(){
 	
 		$boxcss = "
@@ -57,17 +50,14 @@ function noticebox_css(){
 	background:#e3f7fc url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAwFBMVEX///8AVq0CYcADbNEDaMoDa88Das0EcdkFfe0CZMPv9fu/1esFe+kBXbkEdd8Uf+QEb9VRkdAGf/AFeecRacAEc9wBW7QBX7zs6dwFeudRjswGgvUFd+MCZscDbtTl4tIBWbFEo/rh3s7A2/QAVasCZcYEcNcBYL3n5NUFfOsWhe5UqPVCkNvj4NDd2swyhNMGgPIBXLbq59nB4Pw1m/lToOgCY8RBi9Lv9/8FduHm49QxfMfo5dcQYrNTnuVBhMhJU/nRAAAAAXRSTlMAQObYZgAAAMpJREFUeF4lzdVyRTEIQFGI57i7XXet+///VZN2vy0YBrA9HPZeF34v4L/XWXtVdRdIenT+/NheE2W8puxiJ7O2TZSq7jLiTMfm3u53YVXhIHriu3BIEuXVdYBI2Yr4Dex3npd22893KnpdFl9Qp2n3FgTbEZkm/oSQGuVSjiOagwJ9CPNcrodhPCEpb9MygycZDZTz0xyNsYhhkXMhGJuf0XhJXIBj1K/02YTGDQA4F042G7SRDwfs5EVo828qn3+sbW6cEZI1rsUvrDkTPAFMyQwAAAAASUVORK5CYII=') no-repeat 10px 10px;
 	border:1px solid #8ed9f6;
 }
-
 .noicon,.hideicon{
 	background-image: none !important;
 }
-
 </style>
 		";
 		
 		echo $boxcss;
 }
-
 function create_noticebox_shortcode($atts) {
 	// Attributes
 	$atts = shortcode_atts(
@@ -80,7 +70,7 @@ function create_noticebox_shortcode($atts) {
 			'class'		=> '',
 			'noicon'		=> '',
 			'hideicon'		=> '',
-			'boxtitle'		=> '',
+			'hidetitle'		=> '',
 		),
 		$atts,
 		'noticebox'
@@ -99,17 +89,16 @@ function create_noticebox_shortcode($atts) {
 	// other options
 	$noicon = $atts['noicon'];
 	$hideicon = $atts['hideicon'];
-	$boxtitle = $atts['boxtitle'];
+	$hidetitle = $atts['hidetitle'];
 	
 	if($noicon == "true" || $noicon == 1){$noicon = 'noicon';}else{$noicon='';}
 	if($hideicon == "true" || $hideicon == 1){$hideicon = 'hideicon';}else{$hideicon='';}
-	if($boxtitle == "false" || $boxtitle == "no" || $boxtitle == 0){$boxtitle='<span class="boxtitle">'. $type .': </span>';}else{$boxtitle = '';}
+	if($hidetitle == "false" || $hidetitle == "no" || $hidetitle == 0){$hidetitle = '';}else{$hidetitle='<span class="hidetitle">'. $type .': </span>';}
 	
 	// OUTPUT
-	$htmlbox = '<div class="noticebox '. $type .'  '. $hideicon .' '. $class. ' "> '. $boxtitle. $msg . $txt . $text . $message. '</div>';
+	$htmlbox = '<div class="noticebox '. $type .'  '. $hideicon .' '. $class. ' "> '. $hidetitle. $msg . $txt . $text . $message. '</div>';
 	
 	return $htmlbox;
 }
 add_shortcode( 'noticebox', 'create_noticebox_shortcode' );
-
 ?>
