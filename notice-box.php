@@ -15,11 +15,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 /* Enable shortcodes in widget area */
 add_filter('widget_text', 'do_shortcode');
 // add css in footer
-add_action( 'wp_footer','noticebox_css');
+// add_action( 'wp_footer','noticebox_css');
+// add css @ header
+ add_action( 'wp_head','noticebox_css');
 function noticebox_css(){
 	
 		$boxcss = "
-<style type='text/css'>
+<style>
 .noticebox {
 	color:#555;
 	border-radius:10px;
