@@ -24,12 +24,12 @@ function noticebox_css(){
 <style>
 .noticebox {
 	color:#555;
-	border-radius:10px;
+	border-radius:4px;
 	/*
 	font-family:Tahoma,Geneva,Arial,sans-serif;font-size:11px;
 	*/
 	padding:10px 36px;
-	margin:10px;
+	margin:10px 0px;
 }
 .noticebox span {
 	font-weight:bold;
@@ -60,7 +60,7 @@ function noticebox_css(){
 		
 		echo $boxcss;
 }
-function create_noticebox_shortcode($atts) {
+function create_box($atts) {
 	// Attributes
 	$atts = shortcode_atts(
 		array(
@@ -102,5 +102,8 @@ function create_noticebox_shortcode($atts) {
 	
 	return $htmlbox;
 }
-add_shortcode( 'noticebox', 'create_noticebox_shortcode' );
+
+add_shortcode( 'box', 'create_box' );
+add_shortcode( 'infobox', 'create_box' );
+add_shortcode( 'noticebox', 'create_box' );
 ?>
