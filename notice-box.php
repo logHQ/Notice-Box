@@ -95,7 +95,9 @@ function create_box($atts) {
 	
 	if($noicon == "true" || $noicon == 1){$noicon = 'noicon';}else{$noicon='';}
 	if($hideicon == "true" || $hideicon == 1){$hideicon = 'hideicon';}else{$hideicon='';}
-	if($hidetitle == "true" || $hidetitle == "yes" || $hidetitle == 1){$hidetitle = '';}else{$hidetitle='<span class="hidetitle">'. $type .': </span>';}
+	
+	$hidetitle = "";
+	//if($hidetitle == "true" || $hidetitle == "yes" || $hidetitle == 1){$hidetitle = '';}else{$hidetitle='<span class="hidetitle">'. $type .': </span>';}
 	
 	// OUTPUT
 	$htmlbox = '<div class="noticebox '. $type .'  '. $hideicon .' '. $class. ' "> '. $hidetitle. $msg . $txt . $text . $message. '</div>';
