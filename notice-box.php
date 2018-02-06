@@ -55,6 +55,9 @@ function noticebox_css(){
 .noicon,.hideicon{
 	background-image: none !important;
 }
+.noticebox a {
+    color: #00b9eb;
+}
 </style>
 		";
 		
