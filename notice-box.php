@@ -56,6 +56,15 @@ function noticebox_css(){
 	border:1px solid #8ed9f6;
 	border-left: 7px solid #8ed9f6;
 }
+.borderonly, .grayborder {
+    border: 2px solid #707070;
+    border-radius: 4px;
+    margin: 20px 0;
+    padding: 10px 20px;
+    color: #707070;
+    font-size: 14px;
+    font-weight: 400;
+}
 .noicon,.hideicon{
 	background-image: none !important;
 }
